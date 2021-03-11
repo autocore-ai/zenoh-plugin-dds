@@ -30,8 +30,8 @@ name = "zplugin_dds"
 
 
 [dependencies]
-zenoh =  { git = "https://github.com/eclipse-zenoh/zenoh"}
-cyclors = { git = "https://github.com/kydos/cyclors" }
+zenoh =  { git = "https://github.com/autocore-ai/zenoh", branch = "sdv"}
+cyclors = { git = "https://github.com/autocore-ai/cyclors", branch = "sdv"}
 log = "0.4.14"
 async-trait = "0.1.42"
 futures = "0.3.12"
