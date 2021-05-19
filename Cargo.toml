@@ -30,14 +30,15 @@ name = "zplugin_dds"
 
 
 [dependencies]
-zenoh =  { git = "https://github.com/autocore-ai/zenoh", branch = "sdv"}
-cyclors = { git = "https://github.com/autocore-ai/cyclors", branch = "sdv"}
+zenoh =  { git = "https://github.com/eclipse-zenoh/zenoh"}
+cyclors = "0.1.1"
 log = "0.4.14"
 async-trait = "0.1.42"
 futures = "0.3.12"
 libc = "0.2.85"
 clap = "2.33"
 env_logger = "0.8.2"
+regex = "1.4.3"
 
 [dependencies.async-std]
 version = "1.9.0"
@@ -45,8 +46,13 @@ features = ["unstable", "attributes"]
 
 
 [[bin]]
+name = "zenoh-bridge-dds"
+path = "src/bin/zenoh-bridge-dds.rs"
+
+# dzd: old name, deprecated. Keep it for a transition period
+[[bin]]
 name = "dzd"
-path = "src/bin/dzd.rs"
+path = "src/bin/zenoh-bridge-dds.rs"
 
 
 [profile.release]
