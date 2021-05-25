@@ -185,7 +185,7 @@ async fn main() {
                         "Ignoring Publication for key {} as it is not allowed (see --allow option)",
                         &key
                     );
-                    break;
+                    continue;
                 }
                 debug!("Declaring resource {}", key);
                 match rd_map.get(&key) {
