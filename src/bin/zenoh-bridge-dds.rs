@@ -131,9 +131,13 @@ fn parse_args() -> (Properties, String, u32, Option<Regex>) {
 }
 
 fn is_allowed(sre: &Option<Regex>, path: &str) -> bool {
-    match sre {
-        Some(re) => re.is_match(path),
-        _ => true,
+    if Regex::new("ros_discovery_info").unwrap().is_match(path) {
+        return true;
+    } else {
+        match sre {
+            Some(re) => re.is_match(path),
+            _ => true,
+        }
     }
 }
 
